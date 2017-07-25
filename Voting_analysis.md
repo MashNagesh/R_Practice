@@ -127,12 +127,12 @@ LR_output <- 1*(Lr_prob>0.5)
 ```
 ##       y_pred
 ## y_true   0   1
-##      0 104 103
-##      1  44 240
+##      0 102 105
+##      1  48 236
 ```
 
 ```
-## [1] "Accuracy of Random Forest: 0.700611"
+## [1] "Accuracy of Random Forest: 0.688391"
 ```
 
 
@@ -166,13 +166,18 @@ plot(ROC_DT,col="blue",main="ROC CURVES FOR VARIOUS MODELS")
 abline(a=0,b=1,lty=3, col="grey")
 plot(ROC_RF,col="red",add=TRUE)
 plot(ROC_LR,col="green",add=TRUE)
+legend(x="bottomright",y=0.92,
+      legend =c("DecisionTree","Random Forest","Log_Reg"),lty=c(1,1),
+      col=c("blue","red","green"))
 ```
 
-![](Voting_analysis_files/figure-html/ROC_PLOTTING-1.png)<!-- -->
+![](Voting_analysis_files/figure-html/ROCPLOTTING-1.png)<!-- -->
 
 
 #### OBSERVATION:
-From the AUC values the Random Forest model turns out to be better than the decision tree and Logistic regression.
+From the AUC values the Random Forest and Logistic regression have nearly the 
+same auc values but Random Forest seems to have a slightly higher value and 
+hence the better of the two.
 
 
 ```r
@@ -192,7 +197,7 @@ print(auc_RF@y.values)
 
 ```
 ## [[1]]
-## [1] 0.743332
+## [1] 0.7410611
 ```
 
 ```r
