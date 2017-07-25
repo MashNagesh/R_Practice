@@ -127,12 +127,12 @@ LR_output <- 1*(Lr_prob>0.5)
 ```
 ##       y_pred
 ## y_true   0   1
-##      0 105 102
-##      1  47 237
+##      0 104 103
+##      1  44 240
 ```
 
 ```
-## [1] "Accuracy of Random Forest: 0.696538"
+## [1] "Accuracy of Random Forest: 0.700611"
 ```
 
 
@@ -168,7 +168,7 @@ plot(ROC_RF,col="red",add=TRUE)
 plot(ROC_LR,col="green",add=TRUE)
 ```
 
-![](Voting_analysis_files/figure-html/ROC PLOTTING-1.png)<!-- -->
+![](Voting_analysis_files/figure-html/ROC_PLOTTING-1.png)<!-- -->
 
 
 #### OBSERVATION:
@@ -192,7 +192,7 @@ print(auc_RF@y.values)
 
 ```
 ## [[1]]
-## [1] 0.7460366
+## [1] 0.743332
 ```
 
 ```r
