@@ -127,12 +127,12 @@ LR_output <- 1*(Lr_prob>0.5)
 ```
 ##       y_pred
 ## y_true   0   1
-##      0 102 105
-##      1  48 236
+##      0 103 104
+##      1  45 239
 ```
 
 ```
-## [1] "Accuracy of Random Forest: 0.688391"
+## [1] "Accuracy of Random Forest: 0.696538"
 ```
 
 
@@ -182,31 +182,28 @@ hence the better of the two.
 
 ```r
 auc_DT <-performance(prediction(DT_output.pr,y_test),measure = "auc")
-print(auc_DT@y.values)
+print(auc_DT@y.values[[1]])
 ```
 
 ```
-## [[1]]
 ## [1] 0.6959924
 ```
 
 ```r
 auc_RF <-performance(prediction(RF_output.pr,y_test),measure = "auc")
-print(auc_RF@y.values)
+print(auc_RF@y.values[[1]])
 ```
 
 ```
-## [[1]]
-## [1] 0.7410611
+## [1] 0.7443271
 ```
 
 ```r
 auc_LR <-performance(prediction(Lr_prob,y_test),measure = "auc")
-print(auc_LR@y.values)
+print(auc_LR@y.values[[1]])
 ```
 
 ```
-## [[1]]
 ## [1] 0.7176124
 ```
 

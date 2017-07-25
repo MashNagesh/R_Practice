@@ -74,12 +74,13 @@ ROC_LR <- performance(prediction(Lr_prob,y_test),"tpr","fpr")
 
 #Plotting the ROC curves
 plot(ROC_DT,col="blue",main= "ROC curves for various models")
-     legend(x="bottomright",y=0.92,
-            legend =c("DecisionTree","Random Forest","Log_Reg"),lty=c(1,1),
-            col=c("blue","red","green"))
+
 abline(a=0,b=1,lty=3, col="grey")
 plot(ROC_RF,col="red",add=TRUE)
 plot(ROC_LR,col="green",add=TRUE)
+legend(x="bottomright",y=0.92,
+      legend =c("DecisionTree","Random Forest","Log_Reg"),lty=c(1,1),
+      col=c("blue","red","green"))
 
 
 #getting the auc values
